@@ -1,5 +1,38 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8541412017482481517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c5eb7abbe3b1ab4e8a41436b1c51f1a, type: 3}
+  m_Name: SSGIFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  showInSceneView: 1
+  showToggleIconInSceneView: 1
+  settings:
+    UseDeferredRendering: 1
+    RenderPassEvent: 450
+    SSGIRangeMin: 10
+    SSGIRangeMax: 25
+    ShadowMinDistace: 2.5
+    ShadowMaxDistace: 10
+    ScanDepth2DRangeFactor: 0.15
+    Orthographic2DRangeFactor: 0.15
+    Quality: {fileID: 11400000, guid: eebfd7413cfac6c4cbe43f5a0b1f27b1, type: 2}
+    Lighting: {fileID: 11400000, guid: 87a3603b30103244b85aa87abba306d3, type: 2}
+    Advanced: {fileID: 11400000, guid: e3eaae48796cb794287872d89fae0cfd, type: 2}
+    Raymarch: {fileID: 11400000, guid: 331462db27454714d9c0f2058a8e42b1, type: 2}
+    Fallback: {fileID: 11400000, guid: c1c032d085a45e7448f20146375b3565, type: 2}
+    DebugScreenCoverage: 1
+    DebugMotionVectors: 0
+    DebugReprojection: 0
+    DebugAlbedo: 0
 --- !u!114 &-5311130647583432271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,12 +98,12 @@ MonoBehaviour:
     AfterOpaque: 0
     Source: 1
     NormalSamples: 1
-    Intensity: 5.07
+    Intensity: 29.66
     DirectLightingStrength: 0.455
     Radius: 0.1
     Samples: 1
     BlurQuality: 0
-    Falloff: 17.88
+    Falloff: 10.5
     SampleCount: -1
   m_BlueNoise256Textures:
   - {fileID: 2800000, guid: 36f118343fc974119bee3d09e2111500, type: 3}
@@ -98,10 +131,12 @@ MonoBehaviour:
     hdrDebugViewPS: {fileID: 4800000, guid: 573620ae32aec764abd4d728906d2587, type: 3}
   m_RendererFeatures:
   - {fileID: -5311130647583432271}
-  - {fileID: 6618793307959048651}
   - {fileID: -2814788649061608460}
   - {fileID: -3144630745569220685}
-  m_RendererFeatureMap: b16119cbd0124bb6cbb9a11a72adda5bf493e116a3dcefd8b3279374ff065cd4
+  - {fileID: 6416053400224231727}
+  - {fileID: 5112014749250235604}
+  - {fileID: -8541412017482481517}
+  m_RendererFeatureMap: b16119cbd0124bb6f493e116a3dcefd8b3279374ff065cd42f714de492660a59d42c9e6f5486f1469340b44106cf7689
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -140,7 +175,7 @@ MonoBehaviour:
   m_CopyDepthMode: 1
   m_AccurateGbufferNormals: 1
   m_IntermediateTextureMode: 1
---- !u!114 &6618793307959048651
+--- !u!114 &5112014749250235604
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,27 +184,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c5eb7abbe3b1ab4e8a41436b1c51f1a, type: 3}
-  m_Name: SSGIFeature
+  m_Script: {fileID: 11500000, guid: e32e72b6a3f58a24c9033e2b9275eea0, type: 3}
+  m_Name: ScreenSpaceShadows
   m_EditorClassIdentifier: 
   m_Active: 1
-  showInSceneView: 1
-  showToggleIconInSceneView: 1
-  settings:
-    UseDeferredRendering: 0
-    RenderPassEvent: 450
-    SSGIRangeMin: 10
-    SSGIRangeMax: 25
-    ShadowMinDistace: 2.5
-    ShadowMaxDistace: 10
-    ScanDepth2DRangeFactor: 0.15
-    Orthographic2DRangeFactor: 0.15
-    Quality: {fileID: 11400000, guid: eebfd7413cfac6c4cbe43f5a0b1f27b1, type: 2}
-    Lighting: {fileID: 11400000, guid: 87a3603b30103244b85aa87abba306d3, type: 2}
-    Advanced: {fileID: 11400000, guid: e3eaae48796cb794287872d89fae0cfd, type: 2}
-    Raymarch: {fileID: 11400000, guid: 331462db27454714d9c0f2058a8e42b1, type: 2}
-    Fallback: {fileID: 11400000, guid: c1c032d085a45e7448f20146375b3565, type: 2}
-    DebugScreenCoverage: 1
-    DebugMotionVectors: 0
-    DebugReprojection: 0
-    DebugAlbedo: 0
+  m_Shader: {fileID: 4800000, guid: 0f854b35a0cf61a429bd5dcfea30eddd, type: 3}
+--- !u!114 &6416053400224231727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a864f588276bab54f97335821add48a7, type: 3}
+  m_Name: LimSSR
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  Settings:
+    tracingMode: 0
+    stepStrideLength: 0.03
+    maxSteps: 128
+    downSample: 0
+    minSmoothness: 0
+    reflectSky: 1
+    ditherType: 1
+    SSR_Instance: {fileID: 0}
+    SSRShader: {fileID: 4800000, guid: 03f5601bba0a8034aa526644e8b9aaeb, type: 3}

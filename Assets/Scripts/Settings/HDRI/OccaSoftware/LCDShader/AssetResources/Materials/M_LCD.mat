@@ -172,7 +172,7 @@ Material:
     - _ScanlineIntensity: 0.2
     - _ScanlineSpeed: -1
     - _ScanlineTiling: -4
-    - _ScreenBrightnessFlickerIntensity: 12.57
+    - _ScreenBrightnessFlickerIntensity: 20
     - _ScreenBrightnessFlickerOffsetSpeed: 1e-11
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
